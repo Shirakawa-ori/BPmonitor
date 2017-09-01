@@ -19,7 +19,7 @@ except BaseException:
     exit(0)
 
 #第三方 SMTP 服务
-mail_host="smtp.mxhichina.com"			#设置服务器
+mail_host="smtp.mxhichina.com"	#设置服务器
 mail_user="your@mail"			#用户名
 mail_pass="yourpwd"				#口令 
  
@@ -31,12 +31,12 @@ message = MIMEText("<html>" + mail_smg + "</html>", 'html', 'utf-8')
 message['From'] = Header("From", 'utf-8')	      #发件人
 message['To'] =  Header("To", 'utf-8')		      #收件人
 subject = '服务不可达报告'					        #邮件主题
-message['Subject'] = Header(subject, 'utf-8') #邮件正文
+message['Subject'] = Header(subject, 'utf-8')     #邮件正文
 
 #发送邮件
 try:
     smtpObj = smtplib.SMTP() 
-    smtpObj.connect(mail_host, 25)					#25为SMTP端口号
+    smtpObj.connect(mail_host, 25)				  #25为SMTP端口号
     smtpObj.ehlo()
     smtpObj.login(mail_user,mail_pass)  
     smtpObj.sendmail(sender, receivers, message.as_string())
