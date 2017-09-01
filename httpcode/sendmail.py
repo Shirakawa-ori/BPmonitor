@@ -28,9 +28,9 @@ receivers = ['your@mail2']		#接收邮件，可设置为你的QQ邮箱或者其�
 
 # 三个参数：第一个为文本内容，第二个 html 设置网页格式，第三个 utf-8 设置编码
 message = MIMEText("<html>" + mail_smg + "</html>", 'html', 'utf-8')
-message['From'] = Header("From", 'utf-8')	    #发件人
-message['To'] =  Header("To, 'utf-8')		      #收件人
-subject = '服务不可达报告'					            #邮件主题
+message['From'] = Header("From", 'utf-8')	      #发件人
+message['To'] =  Header("To", 'utf-8')		      #收件人
+subject = '服务不可达报告'					        #邮件主题
 message['Subject'] = Header(subject, 'utf-8') #邮件正文
 
 #发送邮件
